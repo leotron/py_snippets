@@ -9,6 +9,8 @@ Created on Sat Feb 11 19:45:19 2017
 import numpy as np
 import matplotlib.pyplot as plt
 
+np.seterr(divide='ignore', invalid='ignore')
+
 h = lambda x: 0.5 if x == 0 else 0 if x < 0 else 1
 t = np.arange(0.1,90 * np.pi,0.01)
 
@@ -22,4 +24,4 @@ y = np.array([y_f(i) for i in t])
 
 f = plt.figure(figsize=(10,10))
 plt.plot(x,y,'.',markersize=2)
-
+plt.show()
